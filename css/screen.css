@@ -1,0 +1,1185 @@
+
+	/* RESETS 
+	----------------------------------------------- */
+	 
+	nav,
+	header,
+	section {
+		display: block;
+	}
+	
+	html {
+		overflow-y: scroll;
+		font-size: 100%;
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+	}
+	
+	body,h1,h2,h3,h4,h5,p,ul,li,form,figure,button,input,select {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body,
+	button,
+	input {
+		font-family: sans-serif;
+	}
+	
+	img {
+		border: 0;
+		-ms-interpolation-mode: bicubic;
+	}
+	
+	
+	button,
+	input,
+	select {
+		font-size: 100%;
+		vertical-align: baseline;
+		*vertical-align: middle;
+		line-height: normal;
+	}
+
+	ul,li {
+		list-style: none;
+	}
+
+	.cf:before, .cf:after,
+	#obstacles .wrapper:before,
+	#obstacles .wrapper:after,
+	#obstacles ul:before,
+	#obstacles ul:after,
+	#prizes ul:before,
+	#prizes ul:after,
+	#contestant .wrapper:before,
+	#contestant .wrapper:after,
+	footer .inner:before,
+	footer .inner:after {	
+		content: ""; display: table;
+	}
+	
+	.cf:after,
+	#obstacles .wrapper:after,
+	#obstacles ul:after,
+	#prizes ul:after,
+	#contestant .wrapper:after,
+	footer .inner:after {
+		clear: both;
+	}
+	
+	.cf,
+	#obstacles .wrapper,
+	#obstacles ul,
+	#prizes ul,
+	#contestant .wrapper,
+	footer .inner {
+		*zoom: 1;
+	}
+	
+	
+	/* ANIMATION 
+	----------------------------------------------- */
+	
+	.logo .triple-dare,
+	#prizes img,
+	.submit button,
+	.clock img {
+		-webkit-transition: all .4s ease-out;
+		 -khtml-transition: all .4s ease-out;
+		   -moz-transition: all .4s ease-out; 
+		    -ms-transition: all .4s ease-out;
+		     -o-transition: all .4s ease-out;
+		        transition: all .4s ease-out;
+	}
+	
+	.hugeacle h4,
+	.hugeacle h5,
+	.submit button {
+		-webkit-transform: rotate(-7.5deg);  
+		   -moz-transform: rotate(-7.5deg);  
+		    -ms-transform: rotate(-7.5deg);  
+		     -o-transform: rotate(-7.5deg);  
+		        transform: rotate(-7.5deg); 
+	}
+	
+	.submit button:hover {
+		-webkit-transform: rotate(7.5deg);  
+		   -moz-transform: rotate(7.5deg);  
+		    -ms-transform: rotate(7.5deg);  
+		     -o-transform: rotate(7.5deg);  
+		        transform: rotate(7.5deg);	
+	}
+
+	.logo:hover .triple-dare,
+	#prizes img:hover,
+	.clock img:hover {
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: scale(1.1) rotate(-7.5deg);  
+		   -moz-transform: scale(1.1) rotate(-7.5deg);  
+		    -ms-transform: scale(1.1) rotate(-7.5deg);  
+		     -o-transform: scale(1.1) rotate(-7.5deg);  
+		        transform: scale(1.1) rotate(-7.5deg);
+	}
+	
+	
+	/* WRAPPERS 
+	----------------------------------------------- */
+	 
+	body {
+		padding-bottom: 25px;
+		background-color: #80c1d6;
+		background-image: url(../img/noise.png);
+		font-size: 1em;
+	}
+	
+	html {
+		font-size:100%;
+	}
+	
+	.wrapper {
+		max-width: 940px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	
+	
+	/*
+	 * You might be wondering: why the hell is this a div?
+	 * I tried svg and images including the noise but it has a lot of impact on the file size.
+	 * A layover with the noise as a single background images saves a lot of kbs's. Hurray!
+	 */
+	 
+	.noise {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		width: 100%;
+		height: 100%;
+		background-image: url(../img/noise.png);
+	}
+	
+
+	/* TYPOGRAPHY 
+	----------------------------------------------- */
+
+	@font-face {
+	    font-family: 'KTP';
+	    src: url('../fonts/ktp.eot');
+	    src: url('../fonts/ktp.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/ktp.woff') format('woff'),
+	         url('../fonts/ktp.ttf') format('truetype'),
+	         url('../fonts/ktp.svg#KTP') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	h1,
+	.main-section header h3,
+	#obstacles h4,
+	#obstacles h5,
+	#prizes h4,
+	.clock h4,
+	form input,
+	form .sl,
+	.submit button {
+		font-family: "KTP", sans-serif;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+	
+	h2,
+	nav,
+	footer {
+		font-family: "Open Sans", sans-serif;
+	}
+
+	h1 {
+		position: relative;
+		z-index: 4;
+		padding: 30px 0 0 0;
+		font-size: 3em; /* 48/16 */
+		color: #fe6537;
+		line-height: 1.5em; /* 24/16 */
+		letter-spacing: 2pt;
+		text-shadow: 2px 2px 0px #fff;
+		text-align: center;
+	}
+	
+	h2 {
+		position: relative;
+		z-index: 4;
+		font-size: 1.375em; /* 22/16 */
+		color: #fff;
+		text-align: center;
+	}
+
+
+	/* NAVIGATION 
+	----------------------------------------------- */
+	
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 99;
+		width: 100%;
+		background: #0f2830;
+		background: rgba(15,40,48,.05);
+		text-align: center;
+	}
+	
+	nav.scroll {
+		background: rgba(15,40,48,1);
+	}
+	
+	nav ul {
+		position: relative;
+		left: 50%;
+		z-index: 5;
+		float: left;
+	}
+	
+	nav li {
+		position: relative;
+		right: 50%;
+		float: left;
+	}
+
+	nav a {
+		float: left;
+		padding: 0 20px;
+		font-size: 1.125em; /* 18/16 */
+		line-height: 2em; /* 32/16 */
+		color: #fff;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	
+	nav a:hover {
+		color: #fe6537;
+		color: rgba(15,40,48,1);
+	}
+	
+	nav.scroll a:hover {
+		color: #fe6537;		
+	}
+	
+	nav .top, nav .top:hover {
+		color: #c1dfe8;
+		color: rgba(255,255,255,.5);
+	}
+	
+	nav.scroll .top {
+		color: #fff;
+	}
+	
+	
+	/* HEADER 
+	----------------------------------------------- */
+	
+	.header-main {
+		position: relative;
+		overflow: hidden;
+		background-color: #80c1d6; 
+	}
+	
+	.header-main .wrapper {
+		position: relative;
+		_overflow: hidden;
+		padding-top: 70px;
+		padding-bottom: 80px;
+	}
+
+	.logo {
+		position: relative;
+		width: 51.808511%; /* 487/940 */
+		margin: 0 auto;
+	}
+	
+	.lt-ie8 .logo {
+		z-index: 5;
+	}
+	
+	.logo .blob {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+	}
+	
+	.logo .triple-dare {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 4;
+		width: 58.932238%; /* 287/487 */
+		margin: -25.938967% 0 0 -29.466119%; /* ((221/426)/2)*-1, ((287/487)/2)*-1 */
+	}
+
+	.blob-large {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		z-index: 1;
+		width: 135.425532%; /* 1273/940 */
+		margin-left: -67.712766%; /* ((1273/940)/2)*-1 */
+	}
+	
+
+	/* MAIN SECTION 
+	----------------------------------------------- */
+	
+	.main-section {
+		padding: 7px 0;
+		background-image: url(../img/noise.png);
+	}
+
+	.main-section header {
+		position: relative;
+		z-index: 4;
+		overflow: hidden;
+		height: 100%;
+		padding: 45px 0 52px 0;
+	}
+	
+	.main-section header h3 {
+		float: left;
+		padding: 0 20px 0 0;
+		white-space: nowrap;
+		font-size: 2.5em; /* 40px */
+		color: #fff;
+		line-height: 1em;
+		letter-spacing: 2pt;
+		text-shadow: 4px 4px 0px rgba(0,0,0,.2);
+	}
+
+	.main-section header:after {
+		content: '';
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		display: block;
+		height: 40px;
+		background-image:url(../img/checks.gif);
+		background-position: 0 0, 20px 20px;
+		-webkit-background-size: 40px 40px;
+		   -moz-background-size: 40px 40px;
+		        background-size: 40px 40px;
+		background-image:	-webkit-linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f), -webkit-linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f);
+		background-image:	   -moz-linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f), -moz-linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f);
+		background-image:	     -o-linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f), -o-linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f);
+		background-image:	        linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f), linear-gradient(45deg, #eef13f 25%, transparent 25%, transparent 75%, #eef13f 75%, #eef13f);
+	}
+	
+	
+	/* PRIZES & OBSTACLES 
+	----------------------------------------------- */
+	
+	#obstacles,
+	#prizes {
+		   -moz-box-shadow: inset 0 7px 0 0 rgba(0,0,0,.06), inset 0 -7px 0 0 rgba(0,0,0,.06);
+		-webkit-box-shadow: inset 0 7px 0 0 rgba(0,0,0,.06), inset 0 -7px 0 0 rgba(0,0,0,.06);
+		        box-shadow: inset 0 7px 0 0 rgba(0,0,0,.06), inset 0 -7px 0 0 rgba(0,0,0,.06);
+	}
+	
+	
+	/* OBSTACLES 
+	----------------------------------------------- */
+	
+	#obstacles {
+		position: relative;
+		background-color: #fe6638;
+		background-image: none;
+	}
+	
+	#obstacles .wrapper {
+		position: relative;
+		padding-bottom: 60px;
+	}
+	
+	.lt-ie8 #obstacles .wrapper {
+		z-index: 5;
+	}
+	
+	#obstacles ul {
+		position: relative;
+		z-index: 4;
+		float: left;
+		width: 51.06383%; /* 480/940 */
+	}
+	
+	#obstacles li {
+		position: relative;
+		float: left;
+		display: inline;
+		width: 45.833333%; /* 220/480 */
+		margin: 0 4.1666667% 4.1666667% 0;
+		padding: 10px 0 30px 0;
+		background-color: #80b238;
+		background-image: url(../img/noise.png);
+		text-align: center;
+		cursor: pointer;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+
+	#obstacles li:hover,
+	#obstacles li:focus,
+	#obstacles li.active {
+		background-color: #eef13f;
+	}
+	
+	#obstacles li h4 {
+		position: absolute;
+		bottom: 10px; 
+		left: 0;
+		width: 100%;
+		font-size: 0.875em; /* 14/16 */
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	
+	#obstacles li:hover h4,
+	#obstacles li:focus h4,
+	#obstacles li.active h4 {
+		color: #f46034;
+	}
+	
+	#obstacles li h5 {
+		display: none;
+	}
+	
+	#obstacles li img {
+		vertical-align: bottom;
+		width: 80%;
+	}
+	
+	#obstacles li .blob {
+		display: none;
+	}
+
+	/* hugeacle */
+	
+	.hugeacle {
+		position: absolute;
+		top: 160px;
+		right: 0;
+		width: 48.93617%; /* 460/940 */
+		text-align: center;
+	}
+	
+	.hugeacle img {
+		width: 100%;
+	}
+	
+	.hugeacle .inner {
+		position: relative;
+		height: 100%;
+	}
+	
+	.hugeacle .blob {
+		display: block;
+		width: 51.304348%; /* 236/460 */
+		margin: 0 auto;
+	}
+	
+	.hugeacle .header {
+		position: absolute;
+		top: 60px;
+		left: 0;
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.hugeacle h4 {
+		padding-bottom: 5px;
+		font-size: 2.5em; /* 40/16 */
+		line-height: 1.25em;
+		color: #fff;
+		font-style: italic;
+		letter-spacing: 2pt;
+		text-shadow: 4px 4px 0px rgba(0,0,0,.2);
+	}
+
+	.hugeacle .s {
+		top: 70px;
+	}
+	
+	.hugeacle .s h4 {
+		font-size: 2em; /* 40/16 */
+	}
+	
+	.hugeacle .m h4 {
+		font-size: 2.5em; /* 40/16 */
+	}
+	
+	.hugeacle h5 {
+		font-size: 1.375em; /* 22/16 */
+		color: #fff;
+		font-style: italic;
+		letter-spacing: 1pt;
+		text-shadow: 4px 4px 0px rgba(0,0,0,.2);
+	}
+
+
+	/* PRIZES 
+	----------------------------------------------- */
+	 
+	#prizes {
+		background-color: #80b238;
+	}
+	
+	#prizes .wrapper {
+		overflow: hidden;
+	}
+	
+	#prizes li {
+		float: left;
+		width: 50%;
+		padding-bottom: 60px;
+	}
+
+	#prizes .tv {
+		float: right;
+	}
+
+	#prizes img {
+		width: 100%;
+	}
+	 
+	#prizes h4 {
+	 	padding: 30px 0 0 0;
+		font-size: 1em; /* 16 */
+		line-height: 0.85em;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+	 }
+
+
+	/* CONTESTANT 
+	----------------------------------------------- */
+	
+	#contestant {
+		position: relative;
+		background-color: #80c1d6; 
+		background-image: none;
+		   -moz-box-shadow: inset 0 7px 0 0 rgba(0,0,0,.06);
+		-webkit-box-shadow: inset 0 7px 0 0 rgba(0,0,0,.06);
+		        box-shadow: inset 0 7px 0 0 rgba(0,0,0,.06);
+	}
+	
+	#contestant .wrapper {
+		padding-bottom: 150px;
+	}
+	
+	.lt-ie8 #contestant .wrapper {
+		position: relative;
+		z-index: 4;
+	}
+
+	form {
+		float: left;
+		width: 40.425532%; /* 380/940 */
+	}
+	
+	form .cf {
+		position: relative;
+		z-index: 4;
+	}
+	
+	form select.hide {
+		position: absolute;
+		margin-left: -9999px;
+	}
+	
+	form .ip {
+		float: left;
+		width: 100%;
+		margin: 15px 0 0 0;
+		background: #fe6336;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+	
+	form .ip:first-child {
+		margin-top: 0;
+	}
+	
+	form .ip input {
+		width: 92.105263%; /* 350/380 */
+		padding: 1em; /* 8/16 */
+		border: 0;
+		background: 0;
+		font-size: 1em; /* 16 */
+		color: #fff;
+		text-transform: uppercase;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+	
+	form .sl {
+		float: left;
+		width: 100%;
+		margin: 15px 0 0 0;
+		background: #fe6336;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+	
+	form .ip input:focus, form .sl .drop:focus {
+		outline: 0;
+		-webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .3);
+		   -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .3);
+		       box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+	}
+	
+	/* team color drop down styles */
+	
+	form .team_color {
+		float: left;
+		width: 52.613579%; /* 200/380 */
+		margin-right: 5%; /* ~15/380 */
+	}
+
+	form .team_color .drop .button {
+		width: 22.277273%; /* 50/220 */
+		width: 45px;
+	}
+	
+	form .team_color .drop ul {
+		padding: 6.8181818% 0; /* 15/220 */
+	}
+	
+	form .team_color .drop ul li {
+		padding: 0 6.8181818%; /* 15/220 */
+	}
+	
+	/* gender drop down styles */
+	
+	form .gender {
+		float: left;
+		width: 42.105263%; /* 160/380 */
+	}
+
+	form .gender .drop .button {
+		width: 35.714286%; /* 50/140 */
+		width: 45px;
+	}
+	
+	form .gender .drop ul {
+		padding: 10.714286% 0; /* 15/140 */
+	}
+	
+	form .gender .drop ul li {
+		padding: 0 10.714286%; /* 15/140 */
+	}
+	
+	/* shared drop down styles */
+	
+	form .drop {
+		display: none;
+		position: relative;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+	
+	form .drop span {
+		position: relative;
+		z-index: 5;
+		display: block;
+		padding: 1em; /* 16 */
+		height: 100%;
+		font-size: 1em; /* 16 */
+		color: #fff;
+		cursor: pointer;
+	}
+	
+	form .drop ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 100;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background: #fe6336;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+	
+	form .drop li {
+		padding: 1em; /* 16 */
+		height: 100%;
+		font-size: 1em; /* 16 */
+		line-height: 1.5em;
+		color: #fff;
+	}
+	
+	form .drop li.sel {
+		color: #eef13f;
+	}
+	
+	form .drop li:hover {
+		color: #eef13f;
+		cursor: pointer;
+	}
+
+	form .drop .button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 4;
+		height: 100%;
+		width: 100%;		
+		background: 0;
+		border: 0;
+		background-color: #80b238;
+		background-image: url(../img/noise.png);
+		text-align: center;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+	}
+
+	form .drop .button div {
+		width: 100%;
+		height: 100%;
+		background: url(../img/arrow.gif) no-repeat center center;
+	}
+	
+	.submit {
+		position: relative;
+		margin-top: 40px;
+	}
+	
+	.submit span {
+		display: block;
+		width: 46.578947%; /* 177/380 */
+		margin: 0 auto;
+	}
+	
+	.submit img {
+		width: 100%;
+	}
+	
+	.submit button {
+		position: absolute;
+		top: 0; 
+		left: 0;
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		background: 0;
+		border: 0;
+		color: #fff;
+		font-size: 1.625em; /* 26/16 */
+		line-height: 1.25em;
+		letter-spacing: 2pt;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 0px rgba(0,0,0,.2);
+		cursor: pointer;
+	}
+
+	/* Unfortunately Opera doesn't support placeholder styling (yet) */
+
+	::-webkit-input-placeholder {
+		color: #fff;
+	}
+	
+	:-moz-placeholder {
+		color: #fff;
+	}
+	
+	
+	/* CLOCK 
+	----------------------------------------------- */
+	
+	.clock {
+		position: relative;
+		z-index: 4;
+		float: right;
+		width: 50%; /* 470/940 */
+	}
+	
+	.clock img {
+		width: 100%;
+	}
+	
+	.clock h4 {
+		padding-top: 55px;
+		font-size: 2.5em; /* 40/16 */
+		line-height: 1.25em;
+		color: #fff;
+		letter-spacing: 2pt;
+		text-align: center;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 0px rgba(0,0,0,.2);
+	}
+	
+	
+	/* FOOTER 
+	----------------------------------------------- */
+	
+	footer .inner {
+		position: relative;
+		padding: 25px 0 0 0;
+		border-top: 7px solid #6eafc5;
+		border-top: 7px solid rgba(23,52,61,.1);
+		text-align: center;
+	}
+	
+	footer .wrapper:first-child .inner {
+		padding-top: 68px;
+	}
+
+	footer .kn {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		z-index: 4;
+		width: 134px;
+		height: 85px;
+		margin: -43px 0 0 -67px;
+	}
+	
+	footer .kn img {
+		width: 100%;
+	}
+	
+	footer h4 {
+		clear: both;
+		padding: 0 0 10px 0;
+		font-size: 1.25em; /* 20/16 */
+		color: #fff;
+	}
+	
+	footer p {
+		float: left;
+		width: 48.93617%; /* 460/940 */
+		padding: 0 0 30px 0;
+		font-size: .875em; /* 14/16 */
+		color: #fff;
+		line-height: 1.3em; /* 18/16 */
+	}
+	
+	footer p.a {
+		float: left;
+		text-align: right;
+	}
+	
+	footer p.b {
+		float: right;
+		text-align: left;
+	}
+	
+	footer a {
+		text-decoration: none;
+	}
+	
+	footer small {
+		display: block;
+		padding: 0 0 25px 0;
+		font-size: .875em; /* 14/16 */
+		color: #fff;
+		line-height: 1.125em; /* 18/16 */
+	}
+	
+	footer .cc {
+		vertical-align: bottom;
+	}
+	
+	
+	/* MOBILE LAYOUT (PORTRAIT/320PX) 
+	----------------------------------------------- */
+	
+	@media only screen and (max-width: 767px) {
+	
+		/* TYPOGRAPHY 
+		----------------------------------------------- */
+	
+		h1 {
+			font-size: 1.25em; /* 24/16 */
+			text-shadow: 1px 1px 0px #fff;
+		}
+		
+		h2 {
+			font-size: .75em; /* 12/16 */
+		}
+	
+		/* NAVIGATION 
+		----------------------------------------------- */
+	
+		nav a {
+			font-size: .875em; /* 16 */
+			line-height: 2em; /* 24/16 */
+			padding: 0 5px;
+		}
+		
+		nav .top {
+			display: none;
+		}
+		
+		/* MAIN SECTION 
+		----------------------------------------------- */
+		
+		.header-main .wrapper {
+			padding-bottom: 40px;
+		}
+		
+		.main-section header {
+			padding: 25px 0 25px 0;
+		}
+		
+		.main-section header h3 {
+			font-size: 1em; /* 16 */
+			line-height: 1.375em; /* 22/16 */
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+		
+		.main-section header:after {
+			height: 20px;
+			background-position: 0 0, 10px 10px;
+			-webkit-background-size: 20px 20px;
+			   -moz-background-size: 20px 20px;
+			        background-size: 20px 20px;	
+		}
+		
+		/* CONTESTANT 
+		----------------------------------------------- */
+		
+		#obstacles .wrapper {
+			padding-bottom: 30px;
+		}
+		
+		#obstacles li {
+			padding-bottom: 10px;
+		}
+		
+		#obstacles li h4 {
+			display: none;
+		}
+		
+		/* hugeacle */
+		
+		.hugeacle {
+			top: 80px;
+		}
+		
+		.hugeacle .header {
+			top: 20px;
+		}
+		
+		.hugeacle .s  {
+			top: 15px;
+		}
+		
+		.hugeacle .m  {
+			top: 10px;
+		}
+
+		.hugeacle h4 {
+			padding-bottom: 0;
+			font-size: 1em; /* 16 */
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+		
+		.hugeacle h5 {
+			font-size: 0.5em; /* 10/16 */
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+		
+		.hugeacle .s h4 {
+			font-size: .8em; /* 16 */
+		}
+		
+		.hugeacle .m h4 {
+			font-size: 1em; /* 16 */
+		}
+		
+		.hugeacle .m h5 {
+			font-size: .5em; /* 16 */
+		}
+		
+		/* PRIZES 
+		----------------------------------------------- */
+		 
+		#prizes li {
+			padding-bottom: 30px;
+		}
+		
+		#prizes h4 {
+			padding-top: 15px;
+			font-size: 0.625em; /* 10/16 */
+			line-height: 1.125em; /* 18/16 */
+		}
+		
+		/* CONTESTANT 
+		----------------------------------------------- */
+	
+		#contestant .wrapper {
+			padding-bottom: 100px;
+		}
+	
+		#contestant form {
+			width: 100%;
+		}
+		
+		form .ip input {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		form .drop span {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		form .drop li {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		.submit {
+			margin-top: 20px;
+		}
+		
+		.submit button {
+			font-size: 1em; /* 16 */
+			line-height: 1em; /* 16 */
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+		
+		/* CLOCK 
+		----------------------------------------------- */
+		
+		.clock {
+			width: 100%;
+			margin-top: 20px;
+		}
+		
+		.clock h4 { 
+			padding-top: 25px;
+			font-size: 1.5em; /* 24/16 */
+			line-height: 1.25em; /* 16 */
+			letter-spacing: 2pt;
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+	
+	}
+	
+	/* WIDE MOBILE LAYOUT (LANDSCAPE/480PX) 
+	----------------------------------------------- */
+	
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+		/* OBSTACLES 
+		----------------------------------------------- */
+	
+		.hugeacle .header {
+			top: 30px;
+		}
+		
+		.hugeacle .s  {
+			top: 20px;
+		}
+		
+		.hugeacle .m  {
+			top: 35px;
+		}
+	
+		.hugeacle h4 {
+			font-size: 1.5em; /* 16 */
+			line-height: 1.25em; /* 20/16 */
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+		
+		.hugeacle h5 {
+			font-size: 0.75em; /* 12/16 */
+			text-shadow: 2px 2px 0px rgba(0,0,0,.2);
+		}
+
+		.hugeacle .s h4  {
+			font-size: 1.25em; /* 20/16 */
+		}
+		
+		.hugeacle .s h5  {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		.hugeacle .m h4  {
+			font-size: 1.25em; /* 20/16 */
+		}
+		
+		.hugeacle .m h5  {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		/* CONTESTANT 
+		----------------------------------------------- */
+		
+		form .ip input {
+			font-size: .75em; /* 12/16 */
+		}
+		
+		form .drop span {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		form .drop li {
+			font-size: 0.75em; /* 12/16 */
+		}
+	
+	}
+	
+	/* TABLET LAYOUT 
+	----------------------------------------------- */
+	
+	@media only screen and (min-width: 768px) and (max-width: 991px) {
+		
+		/* TYPOGRAPHY
+		----------------------------------------------- */
+		
+		h1 {
+			font-size: 3em; /* 48/16 */
+		}
+		
+		/* OBSTACLES
+		----------------------------------------------- */
+		
+		.hugeacle .header {
+			top: 45px;
+		}
+
+		.hugeacle .s  {
+			top: 30px;
+		}
+		
+		.hugeacle .m  {
+			top: 20px;
+		}
+		
+		/* CONTESTANT 
+		----------------------------------------------- */
+		
+		form .ip input {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		form .drop span {
+			font-size: 0.75em; /* 12/16 */
+		}
+		
+		form .drop li {
+			font-size: 0.75em; /* 12/16 */
+		}
+
+	}
